@@ -13,10 +13,10 @@ def copy_files_from_dir(source_data_dir, source_sub_dir_list, target_dir):
 
 def main():
     source_data_dir = '../face_dataset/CASIA-maxpy-clean_crop/'
-    target_data_dir = '../face_dataset/CASIA/'
+    target_data_dir = '../face_dataset/CASIA-WebFace_masked/webface_masked/'
 
     source_sub_dir = os.listdir(source_data_dir)
-    target_sub_dir = os.listdir(source_data_dir)
+    target_sub_dir = os.listdir(target_data_dir)
 
     assert len(source_sub_dir) == len(target_sub_dir)
 
@@ -27,10 +27,11 @@ def main():
     testA_source_dir = source_sub_dir[-test_count:]
     testB_source_dir = target_sub_dir[-test_count:]
 
-    trainA_target_dir = target_data_dir + 'trainA'
-    trainB_target_dir = target_data_dir + 'trainB'
-    testA_target_dir = target_data_dir + 'testA'
-    testB_target_dir = target_data_dir + 'testB'
+    target_dir = '../face_dataset/CASIA/'
+    trainA_target_dir = target_dir + 'trainA'
+    trainB_target_dir = target_dir + 'trainB'
+    testA_target_dir = target_dir + 'testA'
+    testB_target_dir = target_dir + 'testB'
 
     copy_files_from_dir(source_data_dir, trainA_source_dir, trainA_target_dir)
     copy_files_from_dir(source_data_dir, trainB_source_dir, trainB_target_dir)
