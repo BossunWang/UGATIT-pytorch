@@ -11,6 +11,7 @@ def copy_files_from_dir(source_data_dir, source_sub_dir_list, target_dir):
                 target_path = os.path.join(target_dir, dir + '_' + fname)
                 copyfile(source_path, target_path)
 
+
 def main():
     source_data_dir = '../face_dataset/CASIA-WebFace_masked/webface_masked/'
     target_data_dir = '../face_dataset/CASIA-maxpy-clean_crop/'
